@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brunda Devireddy</title>
+    <meta
+      name="description"
+      content="Brunda Devireddy — finance student at the University of Florida."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="mark" href="#top">BD</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <p class="eyebrow hero-in">University of Florida · Warrington College of Business</p>
+        <h1 class="hero-in">Brunda Devireddy</h1>
+        <p class="lede hero-in">
+          First-year finance student in Gainesville. Building experience in
+          strategy, leadership, and the work of solving problems with other people.
+        </p>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="section-label pull">
+          <span>01</span>
+          <h2>About</h2>
+        </div>
+        <div class="about-grid">
+          <p class="about-lead pull">
+            I study finance at the University of Florida and look for chances to
+            grow my technical skills, take on new challenges, and stay useful to
+            the teams I join.
+          </p>
+          <div class="about-copy pull">
+            <p>
+              I grew up in Littleton, Colorado, and came to UF after graduating
+              from Rock Canyon High School as a Rocky Mountain Gator Club
+              scholarship recipient. I care about clear thinking, community
+              involvement, and work that asks for both independence and
+              collaboration.
+            </p>
+            <p>
+              Outside of class I play pickleball, follow crime shows, and read
+              thrillers. I am always glad to meet people who are building
+              something, learning something, or figuring out the next step.
+            </p>
+            <ul class="facts">
+              <li class="pull pull-d1">
+                <span>Degree</span>
+                BSBA, Finance · 2026–2030
+              </li>
+              <li class="pull pull-d2">
+                <span>College</span>
+                Warrington College of Business
+              </li>
+              <li class="pull pull-d3">
+                <span>Based in</span>
+                Gainesville, Florida
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects">
+        <div class="section-label pull">
+          <span>02</span>
+          <h2>Projects</h2>
+        </div>
+        <p class="section-intro pull">
+          Current work at the intersection of finance, marketing, and
+          professional development.
+        </p>
+        <div class="project-list">
+          <article class="project pull pull-d1">
+            <p class="project-meta">Rem and Company · 2026</p>
+            <h3>Junior Strategist</h3>
+            <p>
+              Supporting marketing strategy in Gainesville. I help turn ideas
+              into plans, work across a small team, and practice the craft of
+              making a brand feel considered.
+            </p>
+          </article>
+          <article class="project pull pull-d2">
+            <p class="project-meta">Warrington College of Business · 2026</p>
+            <h3>Finance Professional Development</h3>
+            <p>
+              Member of UF’s Finance Professional Development Program. Exploring
+              paths across corporate finance, banking, consulting, and markets
+              while building a network of peers.
+            </p>
+          </article>
+          <article class="project pull pull-d3">
+            <p class="project-meta">Rocky Mountain Gator Club</p>
+            <h3>Scholarship &amp; Community</h3>
+            <p>
+              Honored as a scholarship recipient on the way to UF. That support
+              is part of why I show up ready to join clubs, business
+              organizations, and the wider Gator community.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="section-label pull">
+          <span>03</span>
+          <h2>Contact</h2>
+        </div>
+        <p class="contact-lead pull">
+          If you would like to talk about finance, school, or a project, write
+          to me. I read every note.
+        </p>
+        <div class="contact-rows">
+          <a class="contact-row pull pull-d1" href="mailto:saiee.brundadevireddy@gmail.com">
+            <span>Email</span>
+            <span>saiee.brundadevireddy@gmail.com</span>
+          </a>
+          <a
+            class="contact-row pull pull-d2"
+            href="https://www.linkedin.com/in/brunda-devireddy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>LinkedIn</span>
+            <span>linkedin.com/in/brunda-devireddy</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer pull">
+      <p>Brunda Devireddy</p>
+      <p>Gainesville · University of Florida</p>
+    </footer>
+    <script>
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.querySelectorAll(".pull").forEach(function (el) {
+            el.classList.add("is-in");
+          });
+          return;
+        }
+
+        var canScrub = CSS.supports("animation-timeline: view()");
+        if (canScrub) return;
+
+        var items = document.querySelectorAll(".pull");
+        if (!("IntersectionObserver" in window)) {
+          items.forEach(function (el) {
+            el.classList.add("is-in");
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-in");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+        );
+
+        items.forEach(function (el) {
+          observer.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>
